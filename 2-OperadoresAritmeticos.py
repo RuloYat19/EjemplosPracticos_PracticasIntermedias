@@ -81,3 +81,20 @@ print("//= 4:", contador)  # 6
 
 contador %= 4   # contador = contador % 4
 print("%= 4:", contador)  # 2
+
+# ------------------------------------------
+# Mini Reto: Una tienda ofrece un 20% de descuento. El cliente compró 3 productos. Calcula el total con descuento
+# Solución paso a paso
+precio1 = 25.50
+precio2 = 30.00
+precio3 = 15.75
+
+subtotal = precio1 + precio2 + precio3
+descuento = subtotal * 0.20
+total = subtotal - descuento
+
+print("Factura de compra")
+print("-" * 25)
+print(f"Subtotal: ${subtotal:.2f}")
+print(f"Descuento (20%): ${descuento:.2f}")
+print(f"Total a pagar: ${total:.2f}")
