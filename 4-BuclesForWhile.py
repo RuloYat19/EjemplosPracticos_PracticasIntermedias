@@ -1,3 +1,4 @@
+# EJEMPLOS CON FOR
 # Ejemplo 1: for con range() básico
 # range(inicio, fin, paso)
 # Nota: el fin NO se incluye
@@ -75,6 +76,80 @@ for i in range(filas):
     for j in range(columnas):
         print("*", end=" ")
     print()  # Salto de línea
+
+# ------------------------------------------
+# EJEMPLOS CON WHILE
+# Ejemplo 1: while básico (contador)
+# Contar del 1 al 5
+contador = 1
+while contador <= 5:
+    print(f"Contador: {contador}")
+    contador += 1  # IMPORTANTE: evitar bucle infinito
+
+# Contador descendente
+numero = 10
+while numero > 0:
+    print(numero)
+    numero -= 1
+print("¡Despegue!")
+
+# ------------------------------------------
+# Ejemplo 2: Validación de entrada (muy útil)
+# Pedir un número positivo
+numero = -1
+while numero < 0:
+    numero = int(input("Ingresa un número positivo: "))
+    if numero < 0:
+        print("Error: debe ser positivo")
+print(f"¡Correcto! Número: {numero}")
+
+# ------------------------------------------
+# Ejemplo 3: Menú interactivo (while True + break)
+# Validar rango (1-10)
+valor = 0
+while valor < 1 or valor > 10:
+    valor = int(input("Ingresa un número entre 1 y 10: "))
+print(f"Número válido: {valor}")
+
+while True:
+    print("\n=== MENÚ PRINCIPAL ===")
+    print("1. Saludar")
+    print("2. Despedirse")
+    print("3. Salir")
+    
+    opcion = input("Elige una opción: ")
+    
+    if opcion == "1":
+        print("¡Hola! ¿Cómo estás?")
+    elif opcion == "2":
+        print("¡Hasta luego!")
+    elif opcion == "3":
+        print("Saliendo del programa...")
+        break  # Sale del bucle
+    else:
+        print("Opción inválida")
+
+# ------------------------------------------
+# Ejemplo 4: Juego de adivinanza (while)
+import random
+
+secreto = random.randint(1, 100)
+intentos = 0
+adivinado = False
+
+print("Adivina el número (1-100)")
+
+while not adivinado:
+    numero = int(input("Tu intento: "))
+    intentos += 1
+    
+    if numero == secreto:
+        print(f"🎉 Correcto en {intentos} intentos")
+        adivinado = True
+    elif numero < secreto:
+        print("📈 Más alto")
+    else:
+        print("📉 Más bajo")
 
 # ------------------------------------------
 # Mini Reto 1: Pirámide de asteriscos (for)
